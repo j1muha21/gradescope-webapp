@@ -1628,9 +1628,24 @@
   .blog-article-title { font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700; margin-bottom:0.5rem; line-height:1.4; }
   .blog-article-excerpt { font-size:0.84rem; color:var(--slate-light); line-height:1.6; }
   .blog-article-meta { font-size:0.75rem; color:var(--slate-light); margin-top:0.75rem; font-family:'DM Mono',monospace; }
+  /* ── NEW PAGES RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #about > div, #contact > div, #privacy > div { padding: 2.5rem 1rem !important; }
+    #contact [style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    #about [style*="grid-template-columns:1fr 1fr"]:not([style*="repeat"]) { grid-template-columns: 1fr !important; }
+    #about [style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+    #contact a[href*="instagram"] { flex-direction: column; text-align: center !important; }
+    #contact a[href*="instagram"] div { text-align: center !important; }
+  }
+  @media (max-width: 480px) {
+    #about [style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+  }
 </style>
 </head>
 <body>
+
+
+
 
 
 
@@ -1643,6 +1658,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#" onclick="showSection('home')" data-i18n="nav.home">Home</a></li>
+      <li><a href="#" onclick="showSection('about')">About</a></li>
       <li class="dropdown-wrap">
         <a href="#" data-i18n="nav.tools">Tools</a>
         <div class="dropdown">
@@ -1682,6 +1698,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <div class="mobile-menu-label">Navigation</div>
   <button class="mobile-menu-item" onclick="mobileNav('home')">🏠 Home</button>
+  <button class="mobile-menu-item" onclick="mobileNav('about')">ℹ️ About</button>
   <div class="mobile-menu-label">Tools</div>
   <button class="mobile-menu-item" onclick="mobileNav('tool')">🎓 Grade Converter <span style="font-size:0.7rem;background:var(--gold);color:var(--ink);padding:1px 6px;border-radius:3px;font-weight:700;margin-left:0.5rem;">LIVE</span></button>
   <button class="mobile-menu-item" onclick="mobileNav('gpa')">📊 GPA Calculator <span style="font-size:0.7rem;background:var(--gold);color:var(--ink);padding:1px 6px;border-radius:3px;font-weight:700;margin-left:0.5rem;">LIVE</span></button>
@@ -2298,9 +2315,220 @@ Example:
   </div>
 </div>
 
+
+<!-- ABOUT SECTION -->
+<div id="about" class="section">
+  <div style="max-width:900px;margin:0 auto;padding:4rem 2rem;">
+
+    <div style="background:var(--ink);border-radius:14px;padding:3rem 2.5rem;margin-bottom:2.5rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(201,153,58,0.10),transparent);pointer-events:none;"></div>
+      <p style="font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">About GradeScope</p>
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem;">Built for Students<br>Who Cross Borders.</h1>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,0.6);max-width:600px;line-height:1.75;">GradeScope is a free international academic intelligence platform designed to make grade conversion, GPA calculation, and education system understanding accessible to every student, institution, and admissions office in the world.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;">🎯</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">Our Mission</h3>
+        <p style="font-size:0.9rem;color:var(--slate-light);line-height:1.7;">To eliminate confusion in international academic transitions by providing transparent, formula-driven grade conversions — not black-box guesses. Every result comes with a full explanation of the method used.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;">🌍</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">Global Coverage</h3>
+        <p style="font-size:0.9rem;color:var(--slate-light);line-height:1.7;">We support 31 countries and 961 conversion pairs. Whether you're converting a US GPA to a German note, a UK classification to an Australian percentage, or a Nigerian CGPA to a French mention — we've got you covered.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;margin-bottom:1.5rem;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.2em;background:var(--gold);border-radius:2px;display:inline-block;"></span>What Makes Us Different</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:0.1rem;">✦</span>
+          <div><strong style="font-size:0.9rem;">Formula Transparent</strong><p style="font-size:0.84rem;color:var(--slate-light);margin-top:0.2rem;line-height:1.6;">Every conversion shows the exact formula — Modified Bavarian, linear interpolation, or classification-based — so you always know how your grade was calculated.</p></div>
+        </div>
+        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:0.1rem;">✦</span>
+          <div><strong style="font-size:0.9rem;">Pass/Fail Verdict</strong><p style="font-size:0.84rem;color:var(--slate-light);margin-top:0.2rem;line-height:1.6;">We apply each destination country's actual passing threshold — not just a number, but a real academic verdict that matters for admissions and enrollment.</p></div>
+        </div>
+        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:0.1rem;">✦</span>
+          <div><strong style="font-size:0.9rem;">Fully Free</strong><p style="font-size:0.84rem;color:var(--slate-light);margin-top:0.2rem;line-height:1.6;">GradeScope is completely free to use. No subscriptions, no paywalls on core features. We believe academic tools should be accessible to every student worldwide.</p></div>
+        </div>
+        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+          <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:0.1rem;">✦</span>
+          <div><strong style="font-size:0.9rem;">Multi-Language</strong><p style="font-size:0.84rem;color:var(--slate-light);margin-top:0.2rem;line-height:1.6;">Available in 8 languages including Arabic (RTL), Chinese, German, French, Spanish, Portuguese, and Turkish — so students can navigate in their own language.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;">
+      <div style="background:var(--ink);border-radius:10px;padding:1.5rem;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold);">31</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Countries</div>
+      </div>
+      <div style="background:var(--ink);border-radius:10px;padding:1.5rem;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold);">961</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Conversion Pairs</div>
+      </div>
+      <div style="background:var(--ink);border-radius:10px;padding:1.5rem;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold);">3</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Live Tools</div>
+      </div>
+      <div style="background:var(--ink);border-radius:10px;padding:1.5rem;text-align:center;">
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--gold);">8</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Languages</div>
+      </div>
+    </div>
+
+    <div style="background:var(--parchment);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:1.5rem 2rem;text-align:center;">
+      <p style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:var(--slate);line-height:1.7;">"Grades should be a bridge, not a barrier. GradeScope exists to make sure your academic achievements are understood — wherever in the world you choose to go."</p>
+      <p style="font-size:0.8rem;color:var(--gold);font-family:'DM Mono',monospace;letter-spacing:0.1em;margin-top:0.75rem;">— THE GRADESCOPE TEAM</p>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <button onclick="showSection('tool')" class="btn-primary">Try the Grade Converter →</button>
+      <button onclick="showSection('contact')" class="btn-secondary">Contact Us</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<div id="contact" class="section">
+  <div style="max-width:600px;margin:0 auto;padding:4rem 2rem;text-align:center;">
+
+    <p style="font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Get In Touch</p>
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1rem;">We'd Love to<br>Hear From You.</h1>
+    <p style="font-size:1rem;color:var(--slate-light);line-height:1.75;margin-bottom:3rem;">Have a question, suggestion, or just want to say hi? Reach us directly on Instagram — we read every message.</p>
+
+    <a href="https://www.instagram.com/grade_scope?igsh=MWphc3F5ODJqbnN1OA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:1rem;background:var(--ink);border:2px solid var(--gold);border-radius:14px;padding:1.75rem 2.5rem;text-decoration:none;transition:all 0.2s;color:inherit;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)'" onmouseout="this.style.background='var(--ink)';this.style.color='inherit'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold);flex-shrink:0;transition:color 0.2s;" class="ig-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      <div style="text-align:left;">
+        <div style="font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;">Find Us On</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:#fff;">@grade_scope</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;">instagram.com/grade_scope</div>
+      </div>
+    </a>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:3rem;">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem 1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">💬</div>
+        <div style="font-size:0.85rem;font-weight:600;margin-bottom:0.3rem;">Questions</div>
+        <div style="font-size:0.78rem;color:var(--slate-light);line-height:1.5;">Ask us anything about grade conversion or GPA calculations.</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem 1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">💡</div>
+        <div style="font-size:0.85rem;font-weight:600;margin-bottom:0.3rem;">Suggestions</div>
+        <div style="font-size:0.78rem;color:var(--slate-light);line-height:1.5;">Want a new country or feature? We want to know.</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem 1rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">🤝</div>
+        <div style="font-size:0.85rem;font-weight:600;margin-bottom:0.3rem;">Partnerships</div>
+        <div style="font-size:0.78rem;color:var(--slate-light);line-height:1.5;">Schools, universities, and institutions are welcome to reach out.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PRIVACY POLICY SECTION -->
+<div id="privacy" class="section">
+  <div style="max-width:860px;margin:0 auto;padding:4rem 2rem;">
+
+    <div style="margin-bottom:2.5rem;">
+      <p style="font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Legal</p>
+      <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;line-height:1.15;margin-bottom:0.75rem;">Privacy Policy</h1>
+      <p style="font-size:0.85rem;color:var(--slate-light);font-family:'DM Mono',monospace;">Last updated: February 2026</p>
+    </div>
+
+    <div style="background:var(--parchment);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin-bottom:2rem;">
+      <p style="font-size:0.9rem;color:var(--slate);line-height:1.7;"><strong>Summary:</strong> GradeScope does not sell your data, does not use advertising trackers, and does not require an account to use the platform. This policy explains what limited data we may collect and why.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>1. Who We Are</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">GradeScope ("we", "us", "our") is an international academic intelligence platform providing free grade conversion, GPA calculation, and education system information. You can reach us via Instagram at <a href="https://www.instagram.com/grade_scope?igsh=MWphc3F5ODJqbnN1OA%3D%3D&utm_source=qr" target="_blank" style="color:var(--gold);">@grade_scope</a>.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>2. Information We Collect</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;margin-bottom:1rem;">GradeScope is designed to work with minimal data collection. Specifically:</p>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem;">
+          <li style="display:flex;gap:0.75rem;font-size:0.9rem;color:var(--slate);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">✦</span><span><strong>Usage Data:</strong> We may collect anonymous, aggregated usage statistics (pages visited, tools used) through standard web hosting logs. This data cannot identify you personally.</span></li>
+          <li style="display:flex;gap:0.75rem;font-size:0.9rem;color:var(--slate);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">✦</span><span><strong>Local Storage:</strong> Some settings (like your preferred language) may be stored locally in your browser. This data never leaves your device.</span></li>
+          <li style="display:flex;gap:0.75rem;font-size:0.9rem;color:var(--slate);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">✦</span><span><strong>Grade Inputs:</strong> Grades and GPA values you enter into our tools are processed entirely in your browser and are never transmitted to our servers.</span></li>
+          <li style="display:flex;gap:0.75rem;font-size:0.9rem;color:var(--slate);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">✦</span><span><strong>Flashcard Content:</strong> Notes you paste or upload in the Flashcard Tool are parsed locally in your browser. No content is uploaded or stored on our servers.</span></li>
+        </ul>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>3. Cookies</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">GradeScope does not use advertising cookies or third-party tracking cookies. We may use minimal functional cookies or browser local storage to remember your language preference. No personal profiles are built from your usage.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>4. How We Use Information</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">Any anonymous usage data collected is used solely to improve the platform — understanding which tools are used most, which countries are searched, and how to prioritise new features. This data is never sold, shared with third parties for commercial purposes, or used to build personal profiles.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>5. Third-Party Services</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">GradeScope loads fonts from Google Fonts. Google's own privacy policy applies to those requests. We do not use Google Analytics, Facebook Pixel, or any other advertising or behavioural tracking tools. Our Contact page links to Instagram, which is governed by Meta's privacy policy.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>6. Children's Privacy</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">GradeScope is intended for users aged 13 and above. We do not knowingly collect personal data from children under 13. If you believe a child has provided us with personal information, please contact us via Instagram and we will promptly address the concern.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>7. Your Rights</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">Depending on your location, you may have rights under GDPR, CCPA, or other privacy laws regarding access to, correction, or deletion of your personal data. Since GradeScope collects virtually no personal data, there is typically nothing to access or delete. For any privacy-related requests, contact us at <a href="https://www.instagram.com/grade_scope?igsh=MWphc3F5ODJqbnN1OA%3D%3D&utm_source=qr" target="_blank" style="color:var(--gold);">@grade_scope on Instagram</a>.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>8. Changes to This Policy</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of GradeScope after any changes constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;">
+        <h2 style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;"><span style="width:3px;height:1.1em;background:var(--gold);border-radius:2px;display:inline-block;"></span>9. Contact Us</h2>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.75;">For any questions about this Privacy Policy or your data, please reach out to us on Instagram: <a href="https://www.instagram.com/grade_scope?igsh=MWphc3F5ODJqbnN1OA%3D%3D&utm_source=qr" target="_blank" style="color:var(--gold);font-weight:600;">@grade_scope</a></p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;">
+      <button onclick="showSection('home')" class="btn-primary">← Back to Home</button>
+    </div>
+
+  </div>
+</div>
+
 <footer>
-  <strong>GradeScope</strong> — <span data-i18n="footer.tagline">International Academic Intelligence Platform</span><br>
-  <span style="margin-top:0.5rem;display:block;font-size:0.78rem;" data-i18n="footer.disclaimer">For informational purposes only · Final recognition determined by receiving institution</span>
+  <div style="max-width:1280px;margin:0 auto;padding:0 2rem;">
+    <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:1.25rem;">
+      <span style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#fff;">Grade<span style="color:var(--gold);">Scope</span></span>
+    </div>
+    <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);margin-bottom:1.5rem;" data-i18n="footer.tagline">International Academic Intelligence Platform</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+      <a href="#" onclick="showSection('home');return false;" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Home</a>
+      <a href="#" onclick="showSection('about');return false;" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">About</a>
+      <a href="#" onclick="showSection('contact');return false;" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Contact</a>
+      <a href="#" onclick="showSection('privacy');return false;" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.85rem;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Privacy Policy</a>
+      <!-- Instagram icon -->
+      <a href="https://www.instagram.com/grade_scope?igsh=MWphc3F5ODJqbnN1OA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="GradeScope on Instagram" style="color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:0.4rem;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span style="font-size:0.85rem;">Instagram</span>
+      </a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.25rem;">
+      <span style="font-size:0.75rem;color:rgba(255,255,255,0.3);" data-i18n="footer.disclaimer">For informational purposes only · Final recognition determined by receiving institution</span>
+    </div>
+  </div>
 </footer>
 
 <script>
