@@ -1552,8 +1552,7 @@
           <a href="#" onclick="requireEmail('flashcard')">🃏 <span>Flashcard Study Tool</span> <span class="dropdown-badge">LIVE</span></a>
         </div>
       </li>
-      <li><a href="#" onclick="showSection('guides')" data-i18n="nav.guides">Country Guides</a></li>
-      <li><a href="#" onclick="showSection('articles')" data-i18n="nav.blog">Blog</a></li>
+
     </ul>
     <!-- Language Switcher -->
     <div class="lang-switcher">
@@ -1583,27 +1582,17 @@
     <h1 data-i18n="home.headline">The International Academic<br>Intelligence <em>Platform.</em></h1>
     <p class="hero-sub" data-i18n="home.subheadline">Transparent grade conversion, GPA calculation, and in-depth education system guides for international students, admissions offices, and academic institutions worldwide.</p>
     <div class="hero-ctas">
-      <button class="btn-primary" onclick="showSection('guides')" data-i18n="home.cta1">Explore Education Guides</button>
-      <button class="btn-secondary" onclick="requireEmail('tool')" data-i18n="home.cta2">Open Grade Converter →</button>
+      <button class="btn-primary" onclick="requireEmail('tool')" data-i18n="home.cta1">Open Grade Converter</button>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">31</div><div class="stat-label" data-i18n="stats.countries">Countries</div></div>
-      <div class="stat"><div class="stat-num">2</div><div class="stat-label" data-i18n="stats.tools">Live Tools</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label" data-i18n="stats.tools">Live Tools</div></div>
       <div class="stat"><div class="stat-num">961</div><div class="stat-label" data-i18n="stats.pairs">Conversion Pairs</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label" data-i18n="stats.transparent">Formula Transparent</div></div>
     </div>
   </section>
 
-  <!-- Country Highlight Grid on Home -->
-  <section class="features" style="padding-bottom:2rem">
-    <p class="section-label" data-i18n="home.highlightLabel">Education Systems</p>
-    <h2 class="section-title" data-i18n="home.highlightTitle">Explore the World's Academic Landscapes</h2>
-    <p class="section-desc" data-i18n="home.highlightDesc">Each country's education system has unique grading conventions, degree structures, and recognition frameworks. Select a country to read its full education guide.</p>
-    <div class="country-grid" id="homeCountryCards" style="margin-bottom:1.5rem"></div>
-    <div style="text-align:center;margin-top:1rem">
-      <button class="btn-primary" onclick="showSection('guides')" data-i18n="home.viewAllGuides">View All 31 Education Guides →</button>
-    </div>
-  </section>
+
 
   <section class="features" style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <p class="section-label" data-i18n="home.platformLabel">Platform Capabilities</p>
@@ -1841,28 +1830,9 @@
   </div>
 </div>
 
-<!-- GUIDES SECTION (Country Educational Guides) -->
-<div id="guides" class="section">
-  <div class="blog-wrap">
-    <div id="countryGrid">
-      <p class="section-label">Country Educational Guides</p>
-      <h2 class="section-title">Country Education Guides</h2>
-      <p class="section-desc">In-depth guides to grading systems, degree structures, and academic culture across 31 countries.</p>
-      <div class="country-grid" id="countryCards"></div>
-    </div>
-    <div id="countryDetailWrap" style="display:none;"></div>
-  </div>
-</div>
 
-<!-- BLOG / ARTICLES SECTION -->
-<div id="articles" class="section">
-  <div class="blog-articles-wrap">
-    <p class="section-label">Blog & Articles</p>
-    <h2 class="section-title">Academic Insights &amp; Guides</h2>
-    <p class="section-desc">Practical articles on international education, grade conversion tips, study strategies, and academic mobility for students and institutions worldwide.</p>
-    <div class="blog-articles-grid" id="articlesGrid"></div>
-  </div>
-</div>
+
+
 
 <!-- FLASHCARD TOOL SECTION -->
 <div id="flashcard" class="section">
